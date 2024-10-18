@@ -1,10 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js CRUD Fish App
+
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It is designed for managing fish species data with a clean UI and responsive design using **Next.js 14** and **Tailwind CSS**.
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, clone the repository and install the dependencies:
 
 ```bash
+git clone https://github.com/samuelsntr/jsd_test_samuel_sianturi.git
+cd jsd_test_samuel_sianturi
+npm install
+
 npm run dev
 # or
 yarn dev
@@ -12,25 +18,42 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start with /species
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Project Structure
+The project is organized as follows:
+.
+├── components/       # Contains client-side React components
+├── data/             # Logic for retrieving data from API, authentication, and TypeScript types
+├── pages/
+│   ├── index.tsx     # Main page (or initial page) located at /species
+│   └── species/      # Pages related to species management
+├── README.md         # Project documentation
+└── next.config.js    # Next.js configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+components/: This folder contains all client components used throughout the application.
+data/: Contains the logic for interacting with APIs, authentication methods, and TypeScript type definitions.
+pages/index.tsx: The main entry point of the app, which displays the fish species list.
 
-## Learn More
+Main Features
+Species Management: View, add, edit, and delete fish species on the /species page.
+Authentication: Simple user authentication flow.
+Responsive Design: Fully responsive layout using Tailwind CSS.
+API Integration: Uses Axios for interacting with the external API for data management.
 
-To learn more about Next.js, take a look at the following resources:
+API Endpoints
+This project interacts with an external API to manage species data. Here are some of the main endpoints used:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GET /species - Retrieve all species.
+POST /species - Add a new species.
+PUT /species/:id - Update a species by ID.
+DELETE /species/:id - Delete a species by ID.
+Modify these endpoints in the data/ folder to match your backend's API structure.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Technologies
+Next.js 14
+Tailwind CSS
+TypeScript
+Axios - For making HTTP requests to the API.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
